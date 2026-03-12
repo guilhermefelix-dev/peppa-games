@@ -8,7 +8,7 @@
 <Nome 3> Gabriel Henrique Freitas Andrade
 <Nome 4> Arthur Eduardo Nascimento Silva
 <Nome 5> Pedro Augusto dos Santos
-<Nome 6> Pedro Augusto dos Santos
+<Nome 6> Yago Arthur Fernandes de souza
 
 **Disciplina:** WYD7324 — Desenvolvimento Web em HTML5, CSS, JavaScript e PHP
 **Centro Universitário Newton Paiva · 2026/2**
