@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Projeto da disciplina WYD7324 - equipe peppa" />
+    <title>Peppa Games — Equipe Peppa</title>
+
+    <!--
+      O CSS ainda está vazio: ele começa a ser escrito na aula 04.
+      A ligação já fica pronta aqui para ninguém ter de lembrar depois.
+    -->
+    <link rel="stylesheet" href="css/estilo.css">
+  </head>
+
+  <body>
+
+    <header>
+      <h1>Peppa Games</h1>
+      <p>Projeto da equipe Peppa — WYD7324</p>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <li><a href="#jogos">Jogos</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section id="sobre">
+        <h2>Sobre o projeto</h2>
+        <p>
+          O Peppa Games é um projeto desenvolvido pela Equipe Peppa
+          com o objetivo de criar um catálogo de jogos. O site reúne
+          informações sobre diferentes títulos,<br> apresentando jogos de
+          diversos gêneros e estilos para facilitar a busca e a
+          descoberta de novos jogos pelos usuários.
+        </p>
+        <p>Além de conhecer novos jogos, os usuários poderão compartilhar seus conhecimentos,<br>
+           dicas e macetes para ajudar outras pessoas que estejam enfrentando dificuldades em determinadas partes ou desafios dos jogos.<br>
+           Dessa forma, o Peppa Games busca criar um espaço onde os jogadores possam encontrar informações e também contribuir com a comunidade.</p>
+      </section>
+
+      <section id="jogos">
+        <h2>Jogos:</h2>
+        <h3>Marvel vs Capcom 2 </h3>
+        <p>Jogo de luta que reúne personagens da Marvel e da Capcom em batalhas rápidas e cheias de combos.</p>
+        <h3>Marvel's Spider-Man</h3>
+        <p>Acompanhe Peter Parker em uma aventura por Nova York, enfrentando criminosos e diversos vilões.</p>
+        <h3>Marvel's Spider-Man 2</h3>
+        <p>Continuação da jornada de Peter Parker em uma nova aventura por Nova York. Peter e Miles Morales unem forças para enfrentar novos desafios e ameaças</p>
+        <h3>Minecraft</h3>
+        <p>Um jogo de exploração e construção em mundo aberto onde os jogadores podem criar praticamente qualquer coisa.</p>
+        <h3>Fortnite</h3>
+        <p>Um dos battle royales mais populares, combinando combate, construção e diferentes modos de jogo.</p>
+        <h3>Grand Theft Auto San Andreas</h3>
+        <p>Um jogo de ação e aventura em mundo aberto, CJ retorna para Los Santos e se envolve em uma história de gangues,<br> conflitos e aventuras pelo estado de San Andreas.</p>
+        <h3>Grand Theft Auto V</h3>
+        <p>Um jogo de ação e aventura em mundo aberto, Acompanhe Michael, Franklin e Trevor em uma história de crimes, perseguições e grandes assaltos.</p>
+        <h3>Valorant</h3>
+        <p>Um FPS competitivo da Riot Games que combina tiroteios táticos com habilidades únicas de agentes.</p>
+        <h3>League of Legends</h3>
+        <p>MOBA competitivo em que duas equipes enfrentam batalhas estratégicas para destruir a base adversária.</p>
+        <h3>Resident Evil 4</h3>
+        <p>Leon Kennedy parte para uma missão de resgate que o coloca diante de uma misteriosa ameaça em uma região rural da Europa.</p>
+        <h3>Counter-Strike Global Offensive</h3>
+        <p>Um jogo de tiro em primeira pessoa que combina jogabilidade competitiva com modos de jogo variados.</p>
+      </section>
+
+      <section id="contato">
+        <h2>Contato</h2>
+        <p>Tem alguma dúvida ou sugestão? Entre em contato com a Equipe Peppa!</p>
+       <form action="#" method="post">
+
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" name="nome">
+
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email">
+
+          <label for="assunto">Assunto:</label>
+          <input type="text" id="assunto" name="assunto">
+
+          <button type="submit">Enviar</button>
+
+      </form>
+
+        <!--
+          No ciclo 8, o action deste formulário aponta para o backend:
+          <form action="../backend/processa-contato.php" method="post">
+          Os dois pontos sobem uma pasta (saem do frontend) antes de entrar
+          no backend. Enquanto não há PHP, o action fica em "#".
+        -->
+      </section>
+    </main>
+
+    <footer>
+      <p>Equipe Peppa &middot; 2026 &middot; WYD7324 &middot; Newton Paiva</p>
+    </footer>
+
+    <!--
+      O JavaScript também está vazio por enquanto — ele entra no ciclo 6.
+      defer faz o script rodar depois que a página terminou de carregar.
+    -->
+    <script src="js/script.js" defer></script>
+
+  </body>
+</html>
