@@ -1,6 +1,6 @@
-# Equipe Delta — Escola Delta de Idiomas
+# Equipe Peppa — Peppa Games
 
-Projeto da disciplina **ARA0062 · Desenvolvimento Web em HTML5, CSS, JavaScript
+Projeto da disciplina **WYD7324 · Desenvolvimento Web em HTML5, CSS, JavaScript
 e PHP** — Centro Universitário Newton Paiva, 2026/2.
 
 > Troque o título acima pelo nome da sua equipe e pelo tema do projeto de vocês.
@@ -8,19 +8,17 @@ e PHP** — Centro Universitário Newton Paiva, 2026/2.
 
 ## Tema do projeto
 
-Site de uma escola de idiomas de bairro: apresentação, cursos oferecidos com
-valores e um formulário de contato. Um parágrafo basta — diga o que o site é e
-para quem ele serve.
+Site de uma rede de jogos. Os usuários poderão deixar os seus relatos, suas dicas para outros usuários que precisem e podem descobrir novos jogos através do nosso amplo catálogo de jogos
 
 ## Equipe
 
-**Líder:** Daniela Prado Vieira
+**Líder:** Guilherme Henrique Félix Gomes
 
 | Nome completo | Matrícula | GitHub | Papel |
 |---|---|---|---|
 | Ana Beatriz Nogueira | 2026xxxxx | @anabnogueira | integrante |
 | Carlos Eduardo Ramos | 2026xxxxx | @cadu-ramos | integrante |
-| Daniela Prado Vieira | 2026xxxxx | @dani-prado | **líder** |
+| Guilherme Henrique Félix | 202601506447 | @guilhermefelix-dev | **líder** |
 | Felipe Antunes Costa | 2026xxxxx | @felipeac | integrante |
 | Marina Souza Lima | 2026xxxxx | @marinaslima | integrante |
 | Rafael Teixeira Alves | 2026xxxxx | @rafaelalves | integrante |
