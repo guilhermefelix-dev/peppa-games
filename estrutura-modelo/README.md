@@ -20,7 +20,7 @@ Site de uma rede de jogos. Os usuários poderão deixar os seus relatos, suas di
 | Pedro Henrique Pereira Gomes | 202509153118 | @Pedro-HPG| integrante |
 | Guilherme Henrique Félix | 202601506447 | @guilhermefelix-dev | **líder** |
 | Felipe Antunes Costa | 2026xxxxx | @felipeac | integrante |
-| Marina Souza Lima | 2026xxxxx | @marinaslima | integrante |
+| Arthur Eduardo Nascimento Silva | 202602195895 | @arthureduardo260207-criar | integrante |
 | Rafael Teixeira Alves | 2026xxxxx | @rafaelalves | integrante |
 
 Cada integrante acrescenta a **sua própria linha** nesta tabela, pelo GitHub.
