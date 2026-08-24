@@ -22,6 +22,8 @@ Site de uma rede de jogos. Os usuários poderão deixar os seus relatos, suas di
 | Felipe Antunes Costa | 2026xxxxx | @felipeac | integrante |
 | Arthur Eduardo Nascimento Silva | 202602195895 | @arthureduardo260207-criar | integrante |
 | Rafael Teixeira Alves | 2026xxxxx | @rafaelalves | integrante |
+|Yago Arthur Fernandes de Souza | 202603256782 | @yago799-sudo | integrante |
+
 
 Cada integrante acrescenta a **sua própria linha** nesta tabela, pelo GitHub.
 Esse é o commit que registra a sua participação.
