@@ -16,7 +16,7 @@ Site de uma rede de jogos. Os usuários poderão deixar os seus relatos, suas di
 
 | Nome completo | Matrícula | GitHub | Papel |
 |---|---|---|---|
-| Ana Beatriz Nogueira | 2026xxxxx | @anabnogueira | integrante |
+| Gabriel Henrique Freitas Andrade | 202603022307 | @G4BR13L035 | integrante |
 | Carlos Eduardo Ramos | 2026xxxxx | @cadu-ramos | integrante |
 | Guilherme Henrique Félix | 202601506447 | @guilhermefelix-dev | **líder** |
 | Felipe Antunes Costa | 2026xxxxx | @felipeac | integrante |
