@@ -19,9 +19,7 @@ Site de uma rede de jogos. Os usuários poderão deixar os seus relatos, suas di
 | Gabriel Henrique Freitas Andrade | 202603022307 | @G4BR13L035 | integrante |
 | Pedro Henrique Pereira Gomes | 202509153118 | @Pedro-HPG| integrante |
 | Guilherme Henrique Félix | 202601506447 | @guilhermefelix-dev | **líder** |
-| Felipe Antunes Costa | 2026xxxxx | @felipeac | integrante |
 | Arthur Eduardo Nascimento Silva | 202602195895 | @arthureduardo260207-criar | integrante |
-| Rafael Teixeira Alves | 2026xxxxx | @rafaelalves | integrante |
 | Yago Arthur Fernandes de Souza | 202603256782 | @yago799-sudo | integrante |
 | Pedro Augusto dos Santos | 202601567063 | @pedroecom7 | integrante |
 
