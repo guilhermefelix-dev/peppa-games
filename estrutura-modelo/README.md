@@ -1,14 +1,11 @@
 # Equipe Peppa — Peppa Games
+Equipe: <Nome 1> Guilherme Henrique Félix Gomes· <Nome 2> Pedro Henrique Pereira Gomes· <Nome 3>  Gabriel Henrique Freitas Andrade· <Nome 4> rthur Eduardo Nascimento Silva· <Nome 5> Pedro Augusto dos Santos· <Nome 6> Pedro Augusto dos Santos· Disciplina: WYD7324 — Desenvolvimento Web em HTML5, CSS, JavaScript e PHP Centro Universitário Newton Paiva · 2026/2
 
-Projeto da disciplina **WYD7324 · Desenvolvimento Web em HTML5, CSS, JavaScript
-e PHP** — Centro Universitário Newton Paiva, 2026/2.
 
-> Troque o título acima pelo nome da sua equipe e pelo tema do projeto de vocês.
-> Todo o resto deste arquivo é modelo: substitua os dados de exemplo.
+## Sobre o projeto
 
-## Tema do projeto
-
-Site de uma rede de jogos. Os usuários poderão deixar os seus relatos, suas dicas para outros usuários que precisem e podem descobrir novos jogos através do nosso amplo catálogo de jogos
+Site de uma rede de jogos. Os usuários poderão deixar os seus relatos, suas dicas para outros usuários que precisem, usuários podem descobrir novos jogos através do nosso amplo catálogo de jogos.
+Durante o desenvolvimento, o Peppa Games contará com páginas individuais para os jogos, sistema de busca e filtros, formulário para envio de dicas e comentários dos usuários, além de avaliações. Futuramente, essas informações poderão ser armazenadas em um banco de dados, permitindo maior interação entre os usuários e o conteúdo do site.
 
 ## Equipe
 
@@ -23,19 +20,8 @@ Site de uma rede de jogos. Os usuários poderão deixar os seus relatos, suas di
 | Yago Arthur Fernandes de Souza | 202603256782 | @yago799-sudo | integrante |
 | Pedro Augusto dos Santos | 202601567063 | @pedroecom7 | integrante |
 
-Cada integrante acrescenta a **sua própria linha** nesta tabela, pelo GitHub.
-Esse é o commit que registra a sua participação.
-
 ## Estrutura do projeto
 
-Estrutura obrigatória da disciplina. Não renomeie pastas nem arquivos.
-
-O projeto é separado em duas metades: **`frontend/`** guarda o que roda no
-navegador (HTML, CSS, JavaScript e imagens) e **`backend/`** guarda o que roda
-no servidor (PHP).
-
-```
-.
 ├─ README.md               este arquivo
 ├─ frontend/               tudo o que roda no navegador
 │   ├─ index.html          a página principal
@@ -49,35 +35,60 @@ no servidor (PHP).
     ├─ config/
     │   └─ conexao.php     conexão com o banco (a partir do ciclo 8)
     └─ processa-contato.php  recebe o formulário (a partir do ciclo 8)
-```
 
-Os dois arquivos `.php` começam vazios, só com um comentário dentro. Eles
-existem desde já para que o lugar do código de servidor esteja combinado quando
-o PHP chegar.
+## Identidade visual
 
-## Como abrir o projeto
+Estas são as decisões que o frontend/css/estilo.css aplica. Elas estão aqui para quem lê o repositório entender por que o site tem essa cara — e para a equipe não mudar de ideia a cada aula.
 
-1. Baixe ou clone o repositório.
-2. Abra a pasta no VS Code (*Arquivo → Abrir Pasta* — a pasta do projeto
-   inteira, com `frontend/` e `backend/` dentro).
-3. Abra `frontend/index.html` e clique em **Go Live** (extensão Live Server).
+## Paleta:		
+    --fundo: #0F111A; - cor de fundo do site
+   --fundo-secundario: #171B2B; - cor de fundo do "cartão"
+   --cor-principal: #7C3AED; - cor em que aparecerá links
+   --destaque: #EC4899; - para dar um diferencial no site
+   --destaque-secundario: #38BDF8; - para dar um diferencial no site
+   --texto: #F1F5F9; - cor dos textos
+   --texto-secundario: #94A3B8; - cor dos textos
+   --bordas: #293044; - cor das bordas
 
-Como o `index.html` está dentro de `frontend/`, os caminhos dele ficam assim:
+Contraste conferido em https://webaim.org/resources/contrastchecker/:
 
-| Para chegar em | Escreva no `index.html` |
-|---|---|
-| a folha de estilos | `css/estilo.css` |
-| o script | `js/script.js` |
-| uma imagem | `img/foto.jpg` |
-| um arquivo do backend | `../backend/processa-contato.php` |
+--texto sobre --superficie ......... __,_:1
+--principal sobre --superficie ..... __,_:1
+--sobre-principal sobre --principal  __,_:1
+svg
 
-Os dois pontos (`..`) sobem uma pasta: saem do `frontend/` antes de entrar no
-`backend/`.
+Todos precisam ficar em 4,5:1 ou acima.
 
-## Andamento por ciclo
+Tipografia
 
-- [x] Ciclo 3 — repositório, equipe e estrutura do projeto
-- [ ] Ciclo 3 — `frontend/`: página com listas, tabela e formulário de contato
-- [ ] Ciclos 4 e 5 — `frontend/css/`: identidade visual, layout e responsividade
-- [ ] Ciclos 6 e 7 — `frontend/js/`: interação, validação e dados via JSON
-- [ ] Ciclos 8 a 10 — `backend/`: formulário que grava e lista do banco
+Fonte: <"Nome da fonte">, com plano B <fonte de sistema>, sans-serif Pesos: 400 e <600 ou 700> Por que esta:
+
+Escala: h1 2.5rem · h2 1.75rem · h3 1.25rem · corpo 1rem
+
+Segundo tema
+
+Arquivo: frontend/css/tema-<nome>.css O que é: <em que situação este tema seria usado — modo escuro, uma data comemorativa, uma campanha>
+
+Para ligá-lo, tire o comentário da linha do <link> no frontend/index.html. Ela vem depois do estilo.css.
+
+## Como abrir
+Abra a pasta inteira no VS Code (Arquivo → Abrir Pasta).
+Abra frontend/index.html e clique em Go Live (extensão Live Server).
+
+## Quem fez o quê
+
+Uma linha por integrante. É o mapa de quem procurar quando algo quebra — e bate com o histórico de commits.
+
+     Integrante / Parte da folha de estilo	
+
+Guilherme Félix> / o :root, o box-sizing e o segundo tema
+
+Nome 2> / 	tipografia: web font, escala e entrelinha
+
+Nome 3>	/ página e conteúdo
+
+Nome 4>	/ cabeçalho e menu
+
+Nome 5>	/ tabela
+
+Nome 6>	/ formulário e rodapé
