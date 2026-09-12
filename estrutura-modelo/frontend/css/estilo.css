@@ -1,6 +1,348 @@
 /* ==========================================================================
    ARA0062 — folha de estilos do projeto
-   Este arquivo começa vazio de propósito: o CSS entra a partir da aula 04.
-   Ele já está ligado ao index.html pela linha
-   <link rel="stylesheet" href="css/estilo.css">
+   Gabarito da entrega 3 (ciclo 4): a página da aula 03 com aparência.
+
+   Este arquivo só usa o que foi visto na aula 04:
+     seletor de tipo · classe · id · agrupamento · descendente e filho ·
+     seletor de atributo · pseudo-classes · cascata e herança.
+
+   Caixa (box model), tipografia com web font e layout em flex/grid entram
+   nas aulas 05 e 06. O que está aqui já resolve a entrega — e é honesto
+   dizer que ainda não é o jeito definitivo de fazer o menu.
+
+   Ordem do arquivo, de fora para dentro: página, cabeçalho, menu, conteúdo,
+   tabela, formulário, rodapé. Manter uma ordem previsível é metade da
+   manutenção.
    ========================================================================== */
+
+   :root {
+   --fundo: #0F111A;
+   --fundo-secundario: #171B2B;
+   --cor-principal: #7C3AED;
+   --destaque: #EC4899;
+   --destaque-secundario: #38BDF8;
+   --texto: #F1F5F9;
+   --texto-secundario: #94A3B8;
+   --bordas: #293044;
+}
+   *,
+   ::before,
+   ::after {
+   box-sizing: border-box;
+}
+
+/* ==========================================================================
+   1. A PÁGINA
+   Tudo o que está em body é herdado por quem está dentro: a fonte e a cor do
+   texto são escritas UMA vez, aqui.
+   ========================================================================== */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--texto);
+  background-color: var(--fundo);
+
+  max-width: 860px;
+  margin: 0 auto;        /* 0 em cima/embaixo, automático nas laterais */
+  padding: 0 20px 40px;
+}
+
+
+/* ==========================================================================
+   2. CABEÇALHO
+   ========================================================================== */
+header {
+  background-color: #88005b;
+  color: #ffffff;
+  padding: 36px 28px;
+}
+
+header h1 {
+  margin: 0 0 6px;
+  font-size: 2.1rem;
+}
+
+/* Descendente: só o parágrafo que está dentro do header. O seletor "p"
+   sozinho pegaria todos os parágrafos da página. */
+header p {
+  margin: 0;
+  color: #f0d7e6;
+}
+
+
+/* ==========================================================================
+   3. O MENU
+   O <nav> é uma <ul>, como se aprendeu na aula 03. Aqui ela deixa de parecer
+   uma lista de compras.
+
+   list-style: none tira a bolinha — a bolinha sempre foi aparência, e agora
+   quem manda nela é o CSS.
+   ========================================================================== */
+nav {
+  background-color: #560035;
+  padding: 0 16px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* inline-block põe os itens lado a lado. É o jeito clássico, e funciona.
+   O jeito de hoje é display: flex no <ul> — aula 05. */
+nav li {
+  display: inline-block;
+}
+
+nav a {
+  display: inline-block;
+  padding: 14px 16px;
+  color: #f0d7e6;
+  text-decoration: none;     /* tira o sublinhado do link */
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+nav a:hover {
+  background-color: #88005b;
+  color: #ffffff;
+}
+
+
+/* ==========================================================================
+   4. CONTEÚDO
+   ========================================================================== */
+main {
+  background-color: #ffffff;
+  padding: 8px 32px 32px;
+}
+
+/* Agrupamento: os dois títulos compartilham a cor. */
+h2, h3 {
+  color: #88005b;
+}
+
+h2 {
+  border-bottom: 2px solid #f0d7e6;
+  padding-bottom: 8px;
+  margin-top: 36px;
+}
+
+a {
+  color: #88005b;
+}
+
+a:hover {
+  color: #ff1a00;
+}
+
+img {
+  max-width: 100%;       /* a imagem nunca estoura a coluna */
+  height: auto;
+  border-radius: 6px;
+}
+
+/* As listas de conteúdo continuam sendo listas — só ficam mais arejadas. */
+main ul li,
+main ol li {
+  margin-bottom: 6px;
+}
+
+strong {
+  color: #560035;
+}
+
+
+/* ==========================================================================
+   5. A TABELA
+   border-collapse é a primeira linha de qualquer tabela: sem ele, cada
+   célula desenha a própria borda e ficam duas linhas entre vizinhas.
+   ========================================================================== */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 16px 0 8px;
+}
+
+caption {
+  text-align: left;
+  font-weight: bold;
+  color: #053e60;
+  padding-bottom: 10px;
+}
+
+th, td {
+  border: 1px solid #e2d8de;
+  padding: 10px 14px;
+  text-align: left;
+}
+
+/* Descendente: o th de dentro do thead é cabeçalho de coluna. */
+thead th {
+  background-color: #053e60;
+  color: #ffffff;
+}
+
+/* E o th de dentro do tbody é cabeçalho de linha — outro papel, outro peso. */
+tbody th {
+  background-color: #f4eff2;
+  color: #88005b;
+}
+
+/* Zebra pela posição da linha. Nenhuma classe foi escrita no HTML. */
+tbody tr:nth-child(even) {
+  background-color: #faf7f9;
+}
+
+tbody tr:hover {
+  background-color: #f0d7e6;
+}
+
+
+/* ==========================================================================
+   6. O FORMULÁRIO DE CONTATO
+   ========================================================================== */
+form {
+  background-color: #f4eff2;
+  padding: 24px;
+  border-radius: 8px;
+  border-top: 4px solid #88005b;
+}
+
+fieldset {
+  border: 1px solid #e2d8de;
+  border-radius: 6px;
+  background-color: #ffffff;
+  padding: 18px 20px 6px;
+  margin-bottom: 18px;
+}
+
+legend {
+  color: #88005b;
+  font-weight: bold;
+  padding: 0 8px;
+}
+
+/* Cada campo está embrulhado num <div>: é ele que separa um do outro. */
+form div {
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  font-size: 0.95rem;
+  margin-bottom: 5px;
+}
+
+/* Seletor de atributo: escolhe o input pelo type.
+   Sem isso, uma regra "input { width: 100% }" esticaria também o checkbox. */
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #c9b6c2;
+  border-radius: 4px;
+
+  /* Campo de formulário não herda a fonte do body — tem de pedir. */
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+input[type="checkbox"] {
+  width: auto;
+  margin-right: 8px;
+}
+
+input[type="checkbox"] + label {
+  display: inline;
+  font-weight: normal;
+}
+
+/* :focus é acessibilidade, não enfeite: é como quem navega por Tab sabe onde
+   está. Nunca apague o contorno sem pôr outra marca no lugar. */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid #dfa03f;
+  outline-offset: 1px;
+  border-color: #88005b;
+}
+
+button {
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  background-color: #88005b;
+  color: #ffffff;
+}
+
+button[type="submit"]:hover {
+  background-color: #560035;
+}
+
+/* O botão secundário não compete com o principal. */
+button[type="reset"] {
+  background-color: #ffffff;
+  color: #6e6a70;
+  border: 1px solid #c9b6c2;
+  margin-left: 8px;
+}
+
+
+/* ==========================================================================
+   7. BARRA LATERAL E RODAPÉ
+   ========================================================================== */
+aside {
+  background-color: #ffffff;
+  border-left: 4px solid #dfa03f;
+  padding: 20px 28px;
+  margin-top: 4px;
+}
+
+aside h2 {
+  margin-top: 8px;
+  font-size: 1.2rem;
+  border-bottom: none;
+}
+
+footer {
+  background-color: #380022;
+  color: #c9b6c2;
+  padding: 20px 28px;
+  font-size: 0.9rem;
+}
+
+footer p {
+  margin: 0;
+}
+
+
+/* ==========================================================================
+   8. UMA CLASSE, PARA MOSTRAR QUE ELA EXISTE
+   Classe é o crachá: use-a quando o que você quer estilizar não é "todo
+   elemento X", e sim "estes aqui". Ponha class="destaque" em qualquer
+   parágrafo do index.html para ver.
+   ========================================================================== */
+.destaque {
+  background-color: #f0d7e6;
+  border-left: 4px solid #88005b;
+  padding: 12px 16px;
+}
+
