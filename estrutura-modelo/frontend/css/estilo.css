@@ -371,4 +371,23 @@ footer p {
   border-left: 4px solid #88005b;
   padding: 12px 16px;
 }
+/* cor da tabela do catálogo */
+.tabela-catalogo thead th {
+  background-color: var(--cor-principal);
+  color: #ffffff;
+}
 
+.tabela-catalogo tbody th {
+  background-color: var(--destaque);
+  color: #ffffff;
+}
+
+.tabela-catalogo tbody tr:nth-child(even) {
+  background-color: var(--fundo-secundario);
+  color: var(--texto);
+}
+
+.tabela-catalogo tbody tr:hover {
+  background-color: var(--destaque-secundario);
+  color: #ffffff;
+}
