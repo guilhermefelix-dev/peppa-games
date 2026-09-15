@@ -58,10 +58,10 @@ body {
    ========================================================================== */
 
 header {
-  background-color: #002766; /* Fundo Azul */
-  color: #FFFFFF;
+  background-color: var(--fundo);
+  color: var(--texto);
   padding: 36px 28px;
-  border-bottom: 4px solid #FFD700; /* Borda Amarela */
+  border-bottom: 2px solid var(--bordas);
 }
 
 header h1 {
@@ -69,13 +69,12 @@ header h1 {
   font-size: 2.5rem;
   line-height: 1.2;
   font-weight: 700;
-  color: #FFD700; /* Texto do Título Amarelo */
+  color: var(--cor-principal);
 }
-
 
 header p {
   margin: 0;
-  color: #E6F0FF; /* Texto Secundário Claro */
+  color: var(--texto-secundario);
 }
 
 /* ==========================================================================
@@ -83,7 +82,7 @@ header p {
    ========================================================================== */
 
 nav {
-  background-color: #001A4D; /* Fundo Azul Escuro do Menu */
+  background-color: var(--fundo-secundario);
   padding: 14px 28px;
 }
 
@@ -96,15 +95,14 @@ nav ul {
 }
 
 nav a {
-  color: #FFD700; /* Links Amarelos */
+  color: var(--texto);
   text-decoration: none;
   font-weight: 600;
   font-size: 1.1rem;
 }
 
 nav a:hover {
-  color: #FFFFFF; /* Muda para Branco ao passar o mouse */
-  text-decoration: underline;
+  color: var(--destaque);
 }
 
 
