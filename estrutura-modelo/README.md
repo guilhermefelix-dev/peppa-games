@@ -87,7 +87,7 @@ Nome 2> / 	tipografia: web font, escala e entrelinha
 
 Nome 3>	/ página e conteúdo
 
-Nome 4>	/ cabeçalho e menu
+Pedro Henrique>	/ cabeçalho e menu
 
 Yago arthur>  / tabela
 
