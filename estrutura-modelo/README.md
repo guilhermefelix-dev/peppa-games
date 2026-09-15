@@ -89,6 +89,6 @@ Nome 3>	/ página e conteúdo
 
 Pedro Henrique>	/ cabeçalho e menu
 
-Yago arthur>  / tabela
+Yago arthur> / tabela
 
 Nome 6>	/ formulário e rodapé
