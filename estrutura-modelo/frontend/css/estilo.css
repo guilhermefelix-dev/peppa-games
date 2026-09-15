@@ -230,23 +230,24 @@ tbody tr:hover {
 /* ==========================================================================
    6. O FORMULÁRIO DE CONTATO
    ========================================================================== */
+
 form {
-  background-color: #f4eff2;
+  background-color: #171B2B;
   padding: 24px;
   border-radius: 8px;
-  border-top: 4px solid #88005b;
+  border-top: 4px solid #7C3AED;
 }
 
 fieldset {
-  border: 1px solid #e2d8de;
+  border: 1px solid #293044;
   border-radius: 6px;
-  background-color: #ffffff;
+  background-color: #0F111A;
   padding: 18px 20px 6px;
   margin-bottom: 18px;
 }
 
 legend {
-  color: #88005b;
+  color: #7C3AED;
   font-weight: bold;
   padding: 0 8px;
 }
@@ -261,6 +262,7 @@ label {
   font-weight: bold;
   font-size: 0.95rem;
   margin-bottom: 5px;
+  color: #F1F5F9;
 }
 
 /* Seletor de atributo: escolhe o input pelo type.
@@ -271,12 +273,13 @@ select,
 textarea {
   width: 100%;
   padding: 10px 12px;
-  border: 1px solid #c9b6c2;
+  border: 1px solid #293044;
   border-radius: 4px;
-
   /* Campo de formulário não herda a fonte do body — tem de pedir. */
   font-family: inherit;
   font-size: 1rem;
+  background-color: #171B2B;
+  color: #F1F5F9;
 }
 
 textarea {
@@ -299,9 +302,9 @@ input[type="checkbox"] + label {
 input:focus,
 select:focus,
 textarea:focus {
-  outline: 3px solid #dfa03f;
+  outline: 3px solid #38BDF8;
   outline-offset: 1px;
-  border-color: #88005b;
+  border-color: #7C3AED;
 }
 
 button {
@@ -315,19 +318,19 @@ button {
 }
 
 button[type="submit"] {
-  background-color: #88005b;
-  color: #ffffff;
+  background-color: #7C3AED;
+  color: #F1F5F9;
 }
 
 button[type="submit"]:hover {
-  background-color: #560035;
+  background-color: #EC4899;
 }
 
 /* O botão secundário não compete com o principal. */
 button[type="reset"] {
-  background-color: #ffffff;
-  color: #6e6a70;
-  border: 1px solid #c9b6c2;
+  background-color: #171B2B;
+  color: #94A3B8;
+  border: 1px solid #293044;
   margin-left: 8px;
 }
 
@@ -335,9 +338,10 @@ button[type="reset"] {
 /* ==========================================================================
    7. BARRA LATERAL E RODAPÉ
    ========================================================================== */
+
 aside {
-  background-color: #ffffff;
-  border-left: 4px solid #dfa03f;
+  background-color: #171B2B;
+  border-left: 4px solid #EC4899;
   padding: 20px 28px;
   margin-top: 4px;
 }
@@ -349,8 +353,8 @@ aside h2 {
 }
 
 footer {
-  background-color: #380022;
-  color: #c9b6c2;
+  background-color: #171B2B;
+  color: #94A3B8;
   padding: 20px 28px;
   font-size: 0.9rem;
 }
