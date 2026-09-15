@@ -1,5 +1,5 @@
 # Equipe Peppa — Peppa Games
-Equipe: <Nome 1> Guilherme Henrique Félix Gomes· <Nome 2> Pedro Henrique Pereira Gomes· <Nome 3>  Gabriel Henrique Freitas Andrade· <Nome 4> rthur Eduardo Nascimento Silva· <Nome 5> Pedro Augusto dos Santos· <Nome 6> Pedro Augusto dos Santos· Disciplina: WYD7324 — Desenvolvimento Web em HTML5, CSS, JavaScript e PHP Centro Universitário Newton Paiva · 2026/2
+Equipe: <Nome 1> Guilherme Henrique Félix Gomes· <Nome 2> Pedro Henrique Pereira Gomes· <Nome 3>  Gabriel Henrique Freitas Andrade· <Nome 4> Arthur Eduardo Nascimento Silva· <Nome 5> Pedro Augusto dos Santos· <Nome 6> Pedro Augusto dos Santos· Disciplina: WYD7324 — Desenvolvimento Web em HTML5, CSS, JavaScript e PHP Centro Universitário Newton Paiva · 2026/2
 
 
 ## Sobre o projeto
@@ -83,7 +83,7 @@ Uma linha por integrante. É o mapa de quem procurar quando algo quebra — e ba
 
 Guilherme Félix> / o :root, o box-sizing e o segundo tema
 
-Nome 2> / 	tipografia: web font, escala e entrelinha
+Arthur Eduardo> / 	tipografia: web font, escala e entrelinha
 
 Nome 3>	/ página e conteúdo
 
