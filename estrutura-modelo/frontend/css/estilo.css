@@ -56,10 +56,12 @@ body {
 /* ==========================================================================
    2. CABEÇALHO
    ========================================================================== */
+
 header {
-  background-color: #88005b;
-  color: #ffffff;
+  background-color: #002766; /* Fundo Azul */
+  color: #FFFFFF;
   padding: 36px 28px;
+  border-bottom: 4px solid #FFD700; /* Borda Amarela */
 }
 
 header h1 {
@@ -67,34 +69,44 @@ header h1 {
   font-size: 2.5rem;
   line-height: 1.2;
   font-weight: 700;
+  color: #FFD700; /* Texto do Título Amarelo */
 }
 
-/* Descendente: só o parágrafo que está dentro do header. O seletor "p"
-   sozinho pegaria todos os parágrafos da página. */
+
 header p {
   margin: 0;
-  color: #f0d7e6;
+  color: #E6F0FF; /* Texto Secundário Claro */
 }
-
 
 /* ==========================================================================
    3. O MENU
-   O <nav> é uma <ul>, como se aprendeu na aula 03. Aqui ela deixa de parecer
-   uma lista de compras.
-
-   list-style: none tira a bolinha — a bolinha sempre foi aparência, e agora
-   quem manda nela é o CSS.
    ========================================================================== */
+
 nav {
-  background-color: #560035;
-  padding: 0 16px;
+  background-color: #001A4D; /* Fundo Azul Escuro do Menu */
+  padding: 14px 28px;
 }
 
 nav ul {
   list-style: none;
+  display: flex;
+  gap: 24px;
   margin: 0;
   padding: 0;
 }
+
+nav a {
+  color: #FFD700; /* Links Amarelos */
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+nav a:hover {
+  color: #FFFFFF; /* Muda para Branco ao passar o mouse */
+  text-decoration: underline;
+}
+
 
 /* inline-block põe os itens lado a lado. É o jeito clássico, e funciona.
    O jeito de hoje é display: flex no <ul> — aula 05. */
