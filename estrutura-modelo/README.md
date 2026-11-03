@@ -43,10 +43,12 @@ Site de uma rede de jogos. Os usuários poderão deixar os seus relatos, suas di
 ├─ frontend/                  tudo o que roda no navegador
 │  ├─ index.html              a página principal
 │  ├─ css/
-│  │  └─ estilo.css           estilos do site (a partir da aula 04)
+│  │  ├─ estilo.css           estilos do site (a partir da aula 04)
+│  │  └─ tema2.css            segundo tema (claro), ligado pelo botão do cabeçalho
 │  ├─ js/
 │  │  └─ script.js            comportamento da página (a partir do ciclo 6)
 │  └─ img/
+│     ├─ <jogo>.svg           capa de cada jogo do catálogo (provisórias)
 │     └─ .gitkeep             arquivo vazio que segura a pasta no Git
 └─ backend/                   tudo o que roda no servidor
    ├─ config/
@@ -73,6 +75,7 @@ Estas são as decisões que o frontend/css/estilo.css aplica. Elas estão aqui p
 --texto: #F1F5F9;                /* cor dos textos */
 --texto-secundario: #94A3B8;     /* cor dos textos */
 --bordas: #293044;               /* cor das bordas */
+--sobre-principal: #FFFFFF;      /* texto sobre fundos de cor forte (botões, cabeçalho da tabela) */
 ```
 
 Contraste conferido em https://webaim.org/resources/contrastchecker/:
@@ -100,6 +103,28 @@ Arquivo: frontend/css/tema-.css
 O que é: <em que situação este tema seria usado — modo escuro, uma data comemorativa, uma campanha>
 
 Para ligá-lo, tire o comentário da linha do no frontend/index.html. Ela vem depois do estilo.css.
+
+## JavaScript
+
+O comportamento da página mora em `frontend/js/script.js`, ligado ao `index.html` com `<script src="js/script.js" defer></script>`. Nada de `onclick` no HTML.
+
+**Formulário:** "Contato" (`#form-contato`), com nome, e-mail, assunto e mensagem.
+
+**Regras do formulário** (conferidas no `submit`, além do que o HTML já confere):
+
+1. O nome precisa ter entre 3 e 60 letras (`||`), depois de tirar os espaços das pontas e os espaços duplos (`while`).
+2. O nome não pode ter números (`for` com `break`, dentro da função `temNumero`).
+3. O e-mail precisa ter um domínio depois do `@`.
+4. Se o assunto for "Feedback sobre um jogo" (`&&`), a mensagem precisa ter pelo menos 20 caracteres.
+
+**Outros comportamentos da página:**
+
+- Saudação pela hora no cabeçalho (`if` / `else if` / `else`).
+- Botão "Tema claro / Tema escuro", que liga e desliga o `css/tema2.css`.
+- Busca por nome e filtro por gênero na lista de jogos (`for` e `&&`), com o total de jogos encontrados (`switch`).
+- Dica da mensagem que muda com o assunto (`switch`) e contador de caracteres.
+
+O PHP (`backend/`) entra no ciclo 8. Até lá, o formulário só confere e mostra o aviso.
 
 ## Como abrir
 

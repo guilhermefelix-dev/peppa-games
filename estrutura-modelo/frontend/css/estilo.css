@@ -25,6 +25,7 @@
    --texto: #F1F5F9;
    --texto-secundario: #94A3B8;
    --bordas: #293044;
+   --sobre-principal: #FFFFFF;   /* texto sobre fundos de cor forte */
 }
    *,
    ::before,
@@ -38,18 +39,18 @@
    texto são escritas UMA vez, aqui.
    ========================================================================== */
 body {
- font-family: 'Poppins', Arial, sans-serif;
-   p {
-  font-size: 1rem;
-  line-height: 1.6;
-}
-   
+  font-family: 'Poppins', Arial, sans-serif;
   color: var(--texto);
   background-color: var(--fundo);
 
   max-width: 860px;
   margin: 0 auto;        /* 0 em cima/embaixo, automático nas laterais */
   padding: 0 20px 40px;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 
@@ -115,15 +116,15 @@ nav li {
 nav a {
   display: inline-block;
   padding: 14px 16px;
-  color: #f0d7e6;
+  color: var(--texto);
   text-decoration: none;     /* tira o sublinhado do link */
   font-weight: bold;
   font-size: 0.95rem;
 }
 
 nav a:hover {
-  background-color: #88005b;
-  color: #ffffff;
+  background-color: var(--cor-principal);
+  color: var(--sobre-principal);
 }
 
 
@@ -176,7 +177,7 @@ main ol li {
 }
 
 strong {
-  color: #EC4899;
+  color: var(--destaque);
 }
 
 /* ==========================================================================
@@ -193,35 +194,35 @@ table {
 caption {
   text-align: left;
   font-weight: bold;
-  color: #053e60;
+  color: var(--destaque-secundario);
   padding-bottom: 10px;
 }
 
 th, td {
-  border: 1px solid #e2d8de;
+  border: 1px solid var(--bordas);
   padding: 10px 14px;
   text-align: left;
 }
 
 /* Descendente: o th de dentro do thead é cabeçalho de coluna. */
 thead th {
-  background-color: #053e60;
-  color: #ffffff;
+  background-color: var(--cor-principal);
+  color: var(--sobre-principal);
 }
 
 /* E o th de dentro do tbody é cabeçalho de linha — outro papel, outro peso. */
 tbody th {
-  background-color: #f4eff2;
-  color: #88005b;
+  background-color: var(--fundo-secundario);
+  color: var(--destaque);
 }
 
 /* Zebra pela posição da linha. Nenhuma classe foi escrita no HTML. */
 tbody tr:nth-child(even) {
-  background-color: #faf7f9;
+  background-color: var(--fundo-secundario);
 }
 
 tbody tr:hover {
-  background-color: #f0d7e6;
+  background-color: var(--destaque-secundario);
 }
 
 
@@ -230,22 +231,22 @@ tbody tr:hover {
    ========================================================================== */
 
 form {
-  background-color: #171B2B;
+  background-color: var(--fundo-secundario);
   padding: 24px;
   border-radius: 8px;
-  border-top: 4px solid #7C3AED;
+  border-top: 4px solid var(--cor-principal);
 }
 
 fieldset {
-  border: 1px solid #293044;
+  border: 1px solid var(--bordas);
   border-radius: 6px;
-  background-color: #0F111A;
+  background-color: var(--fundo);
   padding: 18px 20px 6px;
   margin-bottom: 18px;
 }
 
 legend {
-  color: #7C3AED;
+  color: var(--cor-principal);
   font-weight: bold;
   padding: 0 8px;
 }
@@ -260,7 +261,7 @@ label {
   font-weight: bold;
   font-size: 0.95rem;
   margin-bottom: 5px;
-  color: #F1F5F9;
+  color: var(--texto);
 }
 
 /* Seletor de atributo: escolhe o input pelo type.
@@ -271,13 +272,13 @@ select,
 textarea {
   width: 100%;
   padding: 10px 12px;
-  border: 1px solid #293044;
+  border: 1px solid var(--bordas);
   border-radius: 4px;
   /* Campo de formulário não herda a fonte do body — tem de pedir. */
   font-family: inherit;
   font-size: 1rem;
-  background-color: #171B2B;
-  color: #F1F5F9;
+  background-color: var(--fundo-secundario);
+  color: var(--texto);
 }
 
 textarea {
@@ -300,9 +301,9 @@ input[type="checkbox"] + label {
 input:focus,
 select:focus,
 textarea:focus {
-  outline: 3px solid #38BDF8;
+  outline: 3px solid var(--destaque-secundario);
   outline-offset: 1px;
-  border-color: #7C3AED;
+  border-color: var(--cor-principal);
 }
 
 button {
@@ -316,19 +317,19 @@ button {
 }
 
 button[type="submit"] {
-  background-color: #7C3AED;
-  color: #F1F5F9;
+  background-color: var(--cor-principal);
+  color: var(--sobre-principal);
 }
 
 button[type="submit"]:hover {
-  background-color: #EC4899;
+  background-color: var(--destaque);
 }
 
 /* O botão secundário não compete com o principal. */
 button[type="reset"] {
-  background-color: #171B2B;
-  color: #94A3B8;
-  border: 1px solid #293044;
+  background-color: var(--fundo-secundario);
+  color: var(--texto-secundario);
+  border: 1px solid var(--bordas);
   margin-left: 8px;
 }
 
@@ -338,8 +339,8 @@ button[type="reset"] {
    ========================================================================== */
 
 aside {
-  background-color: #171B2B;
-  border-left: 4px solid #EC4899;
+  background-color: var(--fundo-secundario);
+  border-left: 4px solid var(--destaque);
   padding: 20px 28px;
   margin-top: 4px;
 }
@@ -351,8 +352,8 @@ aside h2 {
 }
 
 footer {
-  background-color: #171B2B;
-  color: #94A3B8;
+  background-color: var(--fundo-secundario);
+  color: var(--texto-secundario);
   padding: 20px 28px;
   font-size: 0.9rem;
 }
@@ -369,19 +370,19 @@ footer p {
    parágrafo do index.html para ver.
    ========================================================================== */
 .destaque {
-  background-color: #f0d7e6;
-  border-left: 4px solid #88005b;
+  background-color: var(--fundo-secundario);
+  border-left: 4px solid var(--destaque);
   padding: 12px 16px;
 }
 /* cor da tabela do catálogo */
 .tabela-catalogo thead th {
   background-color: var(--cor-principal);
-  color: #ffffff;
+  color: var(--sobre-principal);
 }
 
 .tabela-catalogo tbody th {
   background-color: var(--destaque);
-  color: #ffffff;
+  color: var(--sobre-principal);
 }
 
 .tabela-catalogo tbody tr:nth-child(even) {
@@ -391,5 +392,126 @@ footer p {
 
 .tabela-catalogo tbody tr:hover {
   background-color: var(--destaque-secundario);
-  color: #ffffff;
+  color: var(--sobre-principal);
+}
+
+
+/* ==========================================================================
+   9. O JAVASCRIPT MUDA A CLASSE, O CSS MUDA A CARA
+   Estas regras só existem para o script.js ligar e desligar classes.
+   Todas as cores vêm do :root, então o segundo tema (tema2.css) vale aqui também.
+   ========================================================================== */
+
+.oculto {
+  display: none;
+}
+
+/* saudação do cabeçalho (passo 3 da aula 06) */
+.saudacao {
+  margin-top: 10px;
+  font-weight: 600;
+  color: var(--destaque-secundario);
+}
+
+/* botão que troca o tema (passo 4 da aula 06) */
+.botao-tema {
+  margin-top: 14px;
+  padding: 8px 18px;
+  background-color: var(--fundo-secundario);
+  color: var(--texto);
+  border: 1px solid var(--bordas);
+}
+
+.botao-tema:hover {
+  border-color: var(--destaque);
+}
+
+/* contador de caracteres e aviso de resultado (aulas 06 e 07) */
+.contador {
+  margin: 6px 0 0;
+  font-size: 0.9rem;
+  color: var(--texto-secundario);
+}
+
+.contador.alerta {
+  color: var(--destaque);
+  font-weight: 600;
+}
+
+.aviso {
+  margin: 18px 0 0;
+  padding: 12px 16px;
+  border-left: 4px solid var(--destaque-secundario);
+  border-radius: 4px;
+  background-color: var(--fundo);
+  color: var(--texto);
+}
+
+.aviso.erro {
+  border-left-color: var(--destaque);
+}
+
+.aviso:empty {
+  display: none;
+}
+
+
+/* ==========================================================================
+   10. O CATÁLOGO COM CAPAS, BUSCA E FILTRO
+   ========================================================================== */
+
+.busca-jogos {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+  background-color: var(--fundo-secundario);
+  border-top: 4px solid var(--cor-principal);
+  border-radius: 8px;
+  padding: 16px 20px;
+}
+
+.lista-jogos {
+  display: grid;
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.jogo {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 20px;
+  align-items: start;
+  background-color: var(--fundo-secundario);
+  border: 1px solid var(--bordas);
+  border-radius: 8px;
+  padding: 14px;
+}
+
+.jogo img {
+  width: 150px;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border: 1px solid var(--bordas);
+}
+
+.jogo h3 {
+  margin-top: 4px;
+}
+
+.jogo p {
+  margin: 0 0 8px;
+  color: var(--texto-secundario);
+}
+
+/* celular: a capa fica em cima do texto */
+@media (max-width: 600px) {
+  .busca-jogos,
+  .jogo {
+    grid-template-columns: 1fr;
+  }
+
+  .jogo img {
+    width: 100%;
+    max-width: 220px;
+  }
 }

@@ -6,5 +6,6 @@
   --destaque-secundario: #0891B2;
   --texto: #18181B;
   --texto-secundario: #52525B;
---bordas: #D4D4D8;
+  --bordas: #D4D4D8;
+  --sobre-principal: #FFFFFF;
 }
