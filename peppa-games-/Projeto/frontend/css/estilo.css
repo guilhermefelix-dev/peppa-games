@@ -1,0 +1,517 @@
+/* ==========================================================================
+   ARA0062 — folha de estilos do projeto
+   Gabarito da entrega 3 (ciclo 4): a página da aula 03 com aparência.
+
+   Este arquivo só usa o que foi visto na aula 04:
+     seletor de tipo · classe · id · agrupamento · descendente e filho ·
+     seletor de atributo · pseudo-classes · cascata e herança.
+
+   Caixa (box model), tipografia com web font e layout em flex/grid entram
+   nas aulas 05 e 06. O que está aqui já resolve a entrega — e é honesto
+   dizer que ainda não é o jeito definitivo de fazer o menu.
+
+   Ordem do arquivo, de fora para dentro: página, cabeçalho, menu, conteúdo,
+   tabela, formulário, rodapé. Manter uma ordem previsível é metade da
+   manutenção.
+   ========================================================================== */
+   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+   :root {
+   --fundo: #0F111A;
+   --fundo-secundario: #171B2B;
+   --cor-principal: #7C3AED;
+   --destaque: #EC4899;
+   --destaque-secundario: #38BDF8;
+   --texto: #F1F5F9;
+   --texto-secundario: #94A3B8;
+   --bordas: #293044;
+   --sobre-principal: #FFFFFF;   /* texto sobre fundos de cor forte */
+}
+   *,
+   ::before,
+   ::after {
+   box-sizing: border-box;
+}
+
+/* ==========================================================================
+   1. A PÁGINA
+   Tudo o que está em body é herdado por quem está dentro: a fonte e a cor do
+   texto são escritas UMA vez, aqui.
+   ========================================================================== */
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  color: var(--texto);
+  background-color: var(--fundo);
+
+  max-width: 860px;
+  margin: 0 auto;        /* 0 em cima/embaixo, automático nas laterais */
+  padding: 0 20px 40px;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+
+/* ==========================================================================
+   2. CABEÇALHO
+   ========================================================================== */
+
+header {
+  background-color: var(--fundo);
+  color: var(--texto);
+  padding: 36px 28px;
+  border-bottom: 2px solid var(--bordas);
+}
+
+header h1 {
+  margin: 0 0 6px;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--cor-principal);
+}
+
+header p {
+  margin: 0;
+  color: var(--texto-secundario);
+}
+
+/* ==========================================================================
+   3. O MENU
+   ========================================================================== */
+
+nav {
+  background-color: var(--fundo-secundario);
+  padding: 14px 28px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  color: var(--texto);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+nav a:hover {
+  color: var(--destaque);
+}
+
+
+/* inline-block põe os itens lado a lado. É o jeito clássico, e funciona.
+   O jeito de hoje é display: flex no <ul> — aula 05. */
+nav li {
+  display: inline-block;
+}
+
+nav a {
+  display: inline-block;
+  padding: 14px 16px;
+  color: var(--texto);
+  text-decoration: none;     /* tira o sublinhado do link */
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+nav a:hover {
+  background-color: var(--cor-principal);
+  color: var(--sobre-principal);
+}
+
+
+/* ==========================================================================
+   4. CONTEÚDO
+   ========================================================================== */
+main {
+  background-color: var(--fundo);
+  padding: 8px 32px 32px;
+}
+
+/* Agrupamento: os dois títulos compartilham a cor. */
+h2, h3 {
+  color: var(--destaque);
+}
+
+h2 {
+  font-size: 2rem;
+  line-height: 1.3;
+  font-weight: 600;
+  border-bottom: 2px solid var(--bordas);
+  padding-bottom: 8px;
+  margin-top: 36px;
+}
+
+h3 {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+a {
+  color: var(--destaque);
+}
+
+a:hover {
+  color: var(--destaque-secundario);
+}
+
+img {
+  max-width: 100%;       /* a imagem nunca estoura a coluna */
+  height: auto;
+  border-radius: 6px;
+}
+
+/* As listas de conteúdo continuam sendo listas — só ficam mais arejadas. */
+main ul li,
+main ol li {
+  margin-bottom: 6px;
+}
+
+strong {
+  color: var(--destaque);
+}
+
+/* ==========================================================================
+   5. A TABELA
+   border-collapse é a primeira linha de qualquer tabela: sem ele, cada
+   célula desenha a própria borda e ficam duas linhas entre vizinhas.
+   ========================================================================== */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 16px 0 8px;
+}
+
+caption {
+  text-align: left;
+  font-weight: bold;
+  color: var(--destaque-secundario);
+  padding-bottom: 10px;
+}
+
+th, td {
+  border: 1px solid var(--bordas);
+  padding: 10px 14px;
+  text-align: left;
+}
+
+/* Descendente: o th de dentro do thead é cabeçalho de coluna. */
+thead th {
+  background-color: var(--cor-principal);
+  color: var(--sobre-principal);
+}
+
+/* E o th de dentro do tbody é cabeçalho de linha — outro papel, outro peso. */
+tbody th {
+  background-color: var(--fundo-secundario);
+  color: var(--destaque);
+}
+
+/* Zebra pela posição da linha. Nenhuma classe foi escrita no HTML. */
+tbody tr:nth-child(even) {
+  background-color: var(--fundo-secundario);
+}
+
+tbody tr:hover {
+  background-color: var(--destaque-secundario);
+}
+
+
+/* ==========================================================================
+   6. O FORMULÁRIO DE CONTATO
+   ========================================================================== */
+
+form {
+  background-color: var(--fundo-secundario);
+  padding: 24px;
+  border-radius: 8px;
+  border-top: 4px solid var(--cor-principal);
+}
+
+fieldset {
+  border: 1px solid var(--bordas);
+  border-radius: 6px;
+  background-color: var(--fundo);
+  padding: 18px 20px 6px;
+  margin-bottom: 18px;
+}
+
+legend {
+  color: var(--cor-principal);
+  font-weight: bold;
+  padding: 0 8px;
+}
+
+/* Cada campo está embrulhado num <div>: é ele que separa um do outro. */
+form div {
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  font-size: 0.95rem;
+  margin-bottom: 5px;
+  color: var(--texto);
+}
+
+/* Seletor de atributo: escolhe o input pelo type.
+   Sem isso, uma regra "input { width: 100% }" esticaria também o checkbox. */
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--bordas);
+  border-radius: 4px;
+  /* Campo de formulário não herda a fonte do body — tem de pedir. */
+  font-family: inherit;
+  font-size: 1rem;
+  background-color: var(--fundo-secundario);
+  color: var(--texto);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+input[type="checkbox"] {
+  width: auto;
+  margin-right: 8px;
+}
+
+input[type="checkbox"] + label {
+  display: inline;
+  font-weight: normal;
+}
+
+/* :focus é acessibilidade, não enfeite: é como quem navega por Tab sabe onde
+   está. Nunca apague o contorno sem pôr outra marca no lugar. */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid var(--destaque-secundario);
+  outline-offset: 1px;
+  border-color: var(--cor-principal);
+}
+
+button {
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  background-color: var(--cor-principal);
+  color: var(--sobre-principal);
+}
+
+button[type="submit"]:hover {
+  background-color: var(--destaque);
+}
+
+/* O botão secundário não compete com o principal. */
+button[type="reset"] {
+  background-color: var(--fundo-secundario);
+  color: var(--texto-secundario);
+  border: 1px solid var(--bordas);
+  margin-left: 8px;
+}
+
+
+/* ==========================================================================
+   7. BARRA LATERAL E RODAPÉ
+   ========================================================================== */
+
+aside {
+  background-color: var(--fundo-secundario);
+  border-left: 4px solid var(--destaque);
+  padding: 20px 28px;
+  margin-top: 4px;
+}
+
+aside h2 {
+  margin-top: 8px;
+  font-size: 1.2rem;
+  border-bottom: none;
+}
+
+footer {
+  background-color: var(--fundo-secundario);
+  color: var(--texto-secundario);
+  padding: 20px 28px;
+  font-size: 0.9rem;
+}
+
+footer p {
+  margin: 0;
+}
+
+
+/* ==========================================================================
+   8. UMA CLASSE, PARA MOSTRAR QUE ELA EXISTE
+   Classe é o crachá: use-a quando o que você quer estilizar não é "todo
+   elemento X", e sim "estes aqui". Ponha class="destaque" em qualquer
+   parágrafo do index.html para ver.
+   ========================================================================== */
+.destaque {
+  background-color: var(--fundo-secundario);
+  border-left: 4px solid var(--destaque);
+  padding: 12px 16px;
+}
+/* cor da tabela do catálogo */
+.tabela-catalogo thead th {
+  background-color: var(--cor-principal);
+  color: var(--sobre-principal);
+}
+
+.tabela-catalogo tbody th {
+  background-color: var(--destaque);
+  color: var(--sobre-principal);
+}
+
+.tabela-catalogo tbody tr:nth-child(even) {
+  background-color: var(--fundo-secundario);
+  color: var(--texto);
+}
+
+.tabela-catalogo tbody tr:hover {
+  background-color: var(--destaque-secundario);
+  color: var(--sobre-principal);
+}
+
+
+/* ==========================================================================
+   9. O JAVASCRIPT MUDA A CLASSE, O CSS MUDA A CARA
+   Estas regras só existem para o script.js ligar e desligar classes.
+   Todas as cores vêm do :root, então o segundo tema (tema2.css) vale aqui também.
+   ========================================================================== */
+
+.oculto {
+  display: none;
+}
+
+/* saudação do cabeçalho (passo 3 da aula 06) */
+.saudacao {
+  margin-top: 10px;
+  font-weight: 600;
+  color: var(--destaque-secundario);
+}
+
+/* botão que troca o tema (passo 4 da aula 06) */
+.botao-tema {
+  margin-top: 14px;
+  padding: 8px 18px;
+  background-color: var(--fundo-secundario);
+  color: var(--texto);
+  border: 1px solid var(--bordas);
+}
+
+.botao-tema:hover {
+  border-color: var(--destaque);
+}
+
+/* contador de caracteres e aviso de resultado (aulas 06 e 07) */
+.contador {
+  margin: 6px 0 0;
+  font-size: 0.9rem;
+  color: var(--texto-secundario);
+}
+
+.contador.alerta {
+  color: var(--destaque);
+  font-weight: 600;
+}
+
+.aviso {
+  margin: 18px 0 0;
+  padding: 12px 16px;
+  border-left: 4px solid var(--destaque-secundario);
+  border-radius: 4px;
+  background-color: var(--fundo);
+  color: var(--texto);
+}
+
+.aviso.erro {
+  border-left-color: var(--destaque);
+}
+
+.aviso:empty {
+  display: none;
+}
+
+
+/* ==========================================================================
+   10. O CATÁLOGO COM CAPAS, BUSCA E FILTRO
+   ========================================================================== */
+
+.busca-jogos {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+  background-color: var(--fundo-secundario);
+  border-top: 4px solid var(--cor-principal);
+  border-radius: 8px;
+  padding: 16px 20px;
+}
+
+.lista-jogos {
+  display: grid;
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.jogo {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 20px;
+  align-items: start;
+  background-color: var(--fundo-secundario);
+  border: 1px solid var(--bordas);
+  border-radius: 8px;
+  padding: 14px;
+}
+
+.jogo img {
+  width: 150px;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border: 1px solid var(--bordas);
+}
+
+.jogo h3 {
+  margin-top: 4px;
+}
+
+.jogo p {
+  margin: 0 0 8px;
+  color: var(--texto-secundario);
+}
+
+/* celular: a capa fica em cima do texto */
+@media (max-width: 600px) {
+  .busca-jogos,
+  .jogo {
+    grid-template-columns: 1fr;
+  }
+
+  .jogo img {
+    width: 100%;
+    max-width: 220px;
+  }
+}
