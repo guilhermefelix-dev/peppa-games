@@ -196,10 +196,38 @@ function conferirFormulario(evento) {
     mostrarAviso("O e-mail precisa ter um domínio, como nome@exemplo.com.", true);
   } else if (campoAssunto.value === "feedback" && mensagem.length < 20) {
     mostrarAviso("Conte mais sobre a sua experiência (mínimo 20 caracteres).", true);
-  } else {
-    // Tudo certo. Quando o PHP entrar (ciclo 8), é aqui que o formulário será enviado
-    // de verdade, e o action vai apontar para ../backend/processa-contato.php
-    mostrarAviso("Tudo certo! Sua mensagem foi conferida. (No ciclo 8, ela vai para o PHP.)", false);
+} else {
+    // 1. Prepara os dados do formulário para envio (FormData lê automaticamente os atributos "name")
+    const dadosFormulario = new FormData(formulario);
+
+    // 2. Dá um feedback imediato enquanto o servidor processa
+    mostrarAviso("Enviando mensagem...", false);
+
+    // 3. Envia para o PHP em segundo plano usando fetch
+    fetch("../backend/processa-contato.php", {
+      method: "POST",
+      body: dadosFormulario
+    })
+      .then(function (resposta) {
+        // Converte a resposta do PHP de texto para objeto JSON
+        return resposta.json();
+      })
+      .then(function (dados) {
+        if (dados.sucesso) {
+          // Sucesso: mostra a mensagem verde e limpa os campos do formulário
+          mostrarAviso(dados.mensagem, false);
+          formulario.reset();
+          trocarDica();
+          contarCaracteres();
+        } else {
+          // Erro retornado pelo PHP (ex: validação ou falha no banco): mostra em vermelho
+          mostrarAviso(dados.mensagem, true);
+        }
+      })
+      .catch(function () {
+        // Erro de rede (ex: Apache/XAMPP desligado ou caminho do arquivo errado)
+        mostrarAviso("Erro de conexão: não foi possível alcançar o servidor. Verifique se o XAMPP está ligado.", true);
+      });
   }
 }
 
