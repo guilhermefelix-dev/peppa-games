@@ -1,9 +1,14 @@
 <?php
-/* ===========================================================================
-   ARA0062 — conexão com o banco de dados
-   Este arquivo começa vazio de propósito: o PHP entra no ciclo 8.
+$host = "localhost";
+$port = "3307";
+$db = "peppa_games";
+$user = "root";
+$pass = "";
 
-   Aqui vai ficar a conexão PDO com o banco do projeto, e é ela que os
-   arquivos de dentro do backend/ vão incluir. Nada de HTML aqui: o backend
-   recebe, valida e grava; quem desenha a tela é o frontend.
-   =========================================================================== */
+try {
+    $pdo = new PDO("mysql:host=$host;port=$port;dbname=$db;charset=utf8", $user, $pass);
+    echo "CONEXAO OK!";
+} catch (PDOException $e) {
+    echo "Erro na conexao: " . $e->getMessage();
+}
+?>
