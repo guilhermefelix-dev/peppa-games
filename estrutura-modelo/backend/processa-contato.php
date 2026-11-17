@@ -13,15 +13,15 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 require_once 'config/conexao.php';
 
-// 1. Coleta e limpeza inicial dos dados
+
 $nome = trim($_POST['nome'] ?? '');
-$nome = preg_replace('/\s+/', ' ', $nome); // remove espaços duplos no meio do nome
+$nome = preg_replace('/\s+/', ' ', $nome); 
 $email = trim($_POST['email'] ?? '');
 $assunto = trim($_POST['assunto'] ?? '');
 $mensagem = trim($_POST['mensagem'] ?? '');
 $ip = $_SERVER['REMOTE_ADDR'] ?? 'desconhecido';
 
-// 2. Validações no servidor (espelhando as regras do front-end)
+
 $assuntosPermitidos = ['duvida', 'sugestao', 'feedback'];
 
 if (mb_strlen($nome) < 3 || mb_strlen($nome) > 60) {
@@ -72,7 +72,7 @@ if ($assunto === 'feedback' && mb_strlen($mensagem) < 20) {
     exit;
 }
 
-// 3. Gravação segura com Prepared Statement (?)
+
 try {
     $sql = "INSERT INTO contatos (nome, email, assunto, mensagem, ip_usuario) VALUES (?, ?, ?, ?, ?)";
     $stmt = $pdo->prepare($sql);
