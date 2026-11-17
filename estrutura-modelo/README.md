@@ -138,11 +138,11 @@ Abra a pasta inteira no VS Code (Arquivo → Abrir Pasta). Abra frontend/index.h
 
 Uma linha por integrante. É o mapa de quem procurar quando algo quebra — e bate com o histórico de commits.
 
-| Integrante      | Parte da folha de estilo                   |
-| --------------- | ------------------------------------------ |
-| Guilherme Félix | o `:root`, o `box-sizing` e o segundo tema |
-| Arthur Eduardo  | tipografia: web font, escala e entrelinha  |
-| Gabriel Henrique| página e conteúdo                          |
-| Pedro Henrique  | cabeçalho e menu                           |
-| Yago Arthur     | tabela                                     |
-| Pedro Augusto   | formulário e rodapé                        |
+| Integrante       | Parte da folha de estilo                   |
+| ---------------- | ------------------------------------------ |
+| Guilherme Félix  | o `:root`, o `box-sizing` e o segundo tema |
+| Arthur Eduardo   | tipografia: web font, escala e entrelinha  |
+| Gabriel Henrique | página, conteúdo e tela de login           |
+| Pedro Henrique   | cabeçalho e menu                           |
+| Yago Arthur      | tabela                                     |
+| Pedro Augusto    | formulário, rodapé e tela de login         |
