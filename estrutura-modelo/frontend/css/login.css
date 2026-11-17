@@ -1,0 +1,124 @@
+.pagina-login {
+  min-height: calc(100vh - 40px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 0;
+}
+
+.cartao-login {
+  width: 100%;
+  max-width: 420px;
+}
+
+.marca {
+  margin: 0 0 4px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--cor-principal);
+}
+
+.cartao-login h1 {
+  margin: 0 0 8px;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--texto);
+}
+
+.subtitulo {
+  margin: 0 0 24px;
+  color: var(--texto-secundario);
+}
+
+.cartao-login input[type="email"],
+.cartao-login input[type="password"],
+.cartao-login input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--bordas);
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 1rem;
+  background-color: var(--fundo);
+  color: var(--texto);
+}
+
+.campo-senha {
+  position: relative;
+  margin-bottom: 0;
+}
+
+.campo-senha input {
+  padding-right: 96px;
+}
+
+.mostrar-senha {
+  position: absolute;
+  top: 50%;
+  right: 6px;
+  transform: translateY(-50%);
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  background-color: transparent;
+  color: var(--destaque-secundario);
+  border: 1px solid var(--bordas);
+}
+
+.mostrar-senha:hover {
+  border-color: var(--destaque-secundario);
+}
+
+.opcoes-login {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+
+.opcoes-login input[type="checkbox"] {
+  accent-color: var(--cor-principal);
+}
+
+.opcoes-login a {
+  color: var(--destaque-secundario);
+  text-decoration: none;
+}
+
+.opcoes-login a:hover {
+  text-decoration: underline;
+}
+
+.cartao-login button[type="submit"] {
+  width: 100%;
+  padding: 14px;
+}
+
+.cartao-login a:focus-visible,
+.cartao-login button:focus-visible {
+  outline: 3px solid var(--destaque-secundario);
+  outline-offset: 2px;
+}
+
+.rodape-login {
+  margin: 16px 0 0;
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--texto-secundario);
+}
+
+.rodape-login + .rodape-login {
+  margin-top: 8px;
+}
+
+@media (max-width: 480px) {
+  .cartao-login h1 {
+    font-size: 2rem;
+  }
+
+  .cartao-login form {
+    padding: 20px;
+  }
+}

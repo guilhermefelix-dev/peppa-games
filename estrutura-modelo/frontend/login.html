@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Entrar na comunidade Peppa Games">
+    <title>Entrar — Peppa Games</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/login.css">
+  </head>
+
+  <body>
+      <main class="pagina-login">
+      <section class="cartao-login" aria-labelledby="titulo-login">
+        <p class="marca">Peppa Games</p>
+        <h1 id="titulo-login">Entrar</h1>
+        <p class="subtitulo">Bem-vindo de volta, gamer! Entre para comentar, avaliar e compartilhar dicas.</p>
+
+        <form id="form-login">
+          <div>
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="voce@exemplo.com" autocomplete="email" required>
+          </div>
+
+          <div>
+            <label for="senha">Senha</label>
+            <div class="campo-senha">
+              <input type="password" id="senha" name="senha" placeholder="Sua senha" minlength="6" autocomplete="current-password" required>
+              <button type="button" id="mostrar-senha" class="mostrar-senha" aria-pressed="false">Mostrar</button>
+            </div>
+          </div>
+
+          <div class="opcoes-login">
+            <span>
+              <input type="checkbox" id="lembrar" name="lembrar">
+              <label for="lembrar">Lembrar de mim</label>
+            </span>
+            <a href="#">Esqueci minha senha</a>
+          </div>
+
+          <button type="submit">Entrar</button>
+
+          <p id="aviso-login" class="aviso" role="status" aria-live="polite"></p>
+        </form>
+
+        <p class="rodape-login">Ainda não tem conta? <a href="#">Criar conta</a></p>
+
+      </section>
+    </main>
+  </body>
+</html>
