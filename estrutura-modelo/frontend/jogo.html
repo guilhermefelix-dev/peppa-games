@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página do jogo na comunidade Peppa Games">
+    <title>Jogo — Peppa Games</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/tema2.css" id="tema-claro" disabled>
+    <link rel="stylesheet" href="css/jogo.css">
+  </head>
+
+  <body>
+
+    <header>
+      <h1>Peppa Games</h1>
+      <p>Comunidade gamer da Equipe Peppa</p>
+      <button type="button" id="botao-tema" class="botao-tema">Tema claro</button>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="index.html#jogos">Jogos</a></li>
+        <li><a href="#fotos">Fotos</a></li>
+        <li><a href="#comentarios">Comentários</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section id="detalhes-jogo">
+        <h2 id="titulo-jogo">Carregando...</h2>
+        <div id="detalhes" class="detalhes-jogo"></div>
+      </section>
+
+      <section id="fotos" class="so-com-jogo">
+        <h2>Fotos da comunidade</h2>
+        <div id="galeria" class="galeria" aria-live="polite"></div>
+
+        <form id="form-foto" novalidate>
+          <div>
+            <label for="foto-nome">Seu nome:</label>
+            <input type="text" id="foto-nome" maxlength="40" required>
+          </div>
+          <div>
+            <label for="foto-arquivo">Adicionar uma foto (JPG, PNG, GIF ou WEBP, até 3 MB):</label>
+            <input type="file" id="foto-arquivo" accept="image/jpeg,image/png,image/gif,image/webp" required>
+          </div>
+          <button type="submit">Enviar foto</button>
+          <p id="aviso-foto" class="aviso" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section id="comentarios" class="so-com-jogo">
+        <h2>Comentários e dicas</h2>
+
+        <form id="form-comentario" novalidate>
+          <div>
+            <label for="comentario-nome">Seu nome:</label>
+            <input type="text" id="comentario-nome" maxlength="40" required>
+          </div>
+          <div>
+            <label for="comentario-texto">Seu comentário ou dica:</label>
+            <textarea id="comentario-texto" maxlength="1000" placeholder="Conte o que achou do jogo ou deixe uma dica para quem está começando." required></textarea>
+            <p id="comentario-contador" class="contador">Até 1000 caracteres</p>
+          </div>
+          <button type="submit">Comentar</button>
+          <p id="aviso-comentario" class="aviso" aria-live="polite"></p>
+        </form>
+
+        <div class="barra-comentarios">
+          <p id="total-comentarios" class="contador" aria-live="polite"></p>
+          <div class="ordem">
+            <label for="ordem-comentarios">Ordenar por:</label>
+            <select id="ordem-comentarios">
+              <option value="recentes">Mais recentes</option>
+              <option value="curtidos">Mais curtidos</option>
+            </select>
+          </div>
+        </div>
+
+        <p id="aviso-lista" class="aviso" aria-live="polite"></p>
+        <div id="lista-comentarios"></div>
+      </section>
+    </main>
+
+    <dialog id="visualizador">
+      <img id="foto-ampliada" alt="">
+      <p id="legenda-foto" class="contador"></p>
+      <button type="button" id="fechar-foto">Fechar</button>
+    </dialog>
+
+    <footer>
+      <p>Equipe Peppa &middot; 2026 &middot; WYD7324 &middot; Newton Paiva</p>
+    </footer>
+
+    <script src="js/jogos.js" defer></script>
+    <script src="js/jogo.js" defer></script>
+
+  </body>
+</html>
