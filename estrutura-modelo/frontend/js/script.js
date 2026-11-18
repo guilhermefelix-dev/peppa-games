@@ -63,16 +63,36 @@ const campoGenero = document.querySelector("#filtro-genero");
 const resultadoBusca = document.querySelector("#resultado-busca");
 const cartoesJogos = document.querySelectorAll(".jogo");
 
+function normalizar(texto) {
+  return texto
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/['’]/g, "")
+    .replace(/[^a-z0-9]/g, "");
+}
+
+function termosDoJogo(cartao) {
+  const titulo = cartao.querySelector("h3").textContent.trim();
+  const jogo = JOGOS.find(function (item) {
+    return item.titulo === titulo;
+  });
+
+  return jogo ? [jogo.titulo].concat(jogo.apelidos) : [titulo];
+}
+
 function filtrarJogos() {
-  const busca = campoBusca.value.trim().toLowerCase();
+  const busca = normalizar(campoBusca.value);
   const genero = campoGenero.value;
   let visiveis = 0;
 
   for (let i = 0; i < cartoesJogos.length; i++) {
     const cartao = cartoesJogos[i];
-    const nomeDoJogo = cartao.querySelector("h3").textContent.toLowerCase();
+    const termos = termosDoJogo(cartao);
 
-    const bateNome = nomeDoJogo.includes(busca);
+    const bateNome = termos.some(function (termo) {
+      return normalizar(termo).includes(busca);
+    });
     const bateGenero = genero === "todos" || cartao.dataset.genero === genero;
 
     if (bateNome && bateGenero) {          // && : os DOIS precisam ser verdadeiros

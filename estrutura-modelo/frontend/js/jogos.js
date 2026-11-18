@@ -1,6 +1,7 @@
 const JOGOS = [
   {
     slug: "mvc2",
+    apelidos: ["mvc2", "mvc 2", "marvel capcom"],
     titulo: "Marvel vs Capcom 2",
     capa: "img/Marvel Vs Capcom 2.jpg",
     genero: "Luta",
@@ -14,6 +15,7 @@ const JOGOS = [
   },
   {
     slug: "spider-man",
+    apelidos: ["homem aranha", "spiderman", "peter parker"],
     titulo: "Marvel's Spider-Man",
     capa: "img/Spider-Man.jpg",
     genero: "Ação / Aventura",
@@ -27,6 +29,7 @@ const JOGOS = [
   },
   {
     slug: "spider-man-2",
+    apelidos: ["homem aranha 2", "spiderman 2", "peter parker", "miles morales"],
     titulo: "Marvel's Spider-Man 2",
     capa: "img/spiderman 2.jpg",
     genero: "Ação / Aventura",
@@ -40,6 +43,7 @@ const JOGOS = [
   },
   {
     slug: "minecraft",
+    apelidos: ["mine"],
     titulo: "Minecraft",
     capa: "img/mine.jpg.jpg",
     genero: "Exploração / Construção",
@@ -53,6 +57,7 @@ const JOGOS = [
   },
   {
     slug: "fortnite",
+    apelidos: [],
     titulo: "Fortnite",
     capa: "img/fortnite.jpg",
     genero: "Battle Royale",
@@ -66,6 +71,7 @@ const JOGOS = [
   },
   {
     slug: "gta-san-andreas",
+    apelidos: ["gta", "gta sa", "san andreas"],
     titulo: "Grand Theft Auto San Andreas",
     capa: "img/gta sa.jpg",
     genero: "Ação / Aventura (Mundo aberto)",
@@ -79,6 +85,7 @@ const JOGOS = [
   },
   {
     slug: "gta-v",
+    apelidos: ["gta", "gta 5", "gta online"],
     titulo: "Grand Theft Auto V",
     capa: "img/GTA V.jpg",
     genero: "Ação / Aventura (Mundo aberto)",
@@ -92,6 +99,7 @@ const JOGOS = [
   },
   {
     slug: "valorant",
+    apelidos: ["valo", "vava"],
     titulo: "Valorant",
     capa: "img/vava.jpg",
     genero: "FPS tático",
@@ -105,6 +113,7 @@ const JOGOS = [
   },
   {
     slug: "league-of-legends",
+    apelidos: ["lol", "liga das lendas"],
     titulo: "League of Legends",
     capa: "img/lol.jpg",
     genero: "MOBA",
@@ -118,6 +127,7 @@ const JOGOS = [
   },
   {
     slug: "resident-evil-4",
+    apelidos: ["re4", "resident evil", "leon kennedy"],
     titulo: "Resident Evil 4",
     capa: "img/Leon Kennedy.jpg",
     genero: "Survival Horror",
@@ -131,6 +141,7 @@ const JOGOS = [
   },
   {
     slug: "counter-strike",
+    apelidos: ["cs", "csgo", "cs go", "cs2", "counter strike"],
     titulo: "Counter-Strike Global Offensive",
     capa: "img/Cs2.jpg",
     genero: "FPS tático",

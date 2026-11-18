@@ -1,3 +1,7 @@
+.jogo.oculto {
+  display: none;
+}
+
 .jogo-clicavel {
   cursor: pointer;
   user-select: none;
