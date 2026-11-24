@@ -1,57 +1,42 @@
-const campoSenha = document.querySelector("#senha");
-const botaoMostrar = document.querySelector("#mostrar-senha");
-
-function alternarSenha() {
-  if (campoSenha.type === "password") {
-    campoSenha.type = "text";
-    botaoMostrar.textContent = "Ocultar";
-    botaoMostrar.setAttribute("aria-pressed", "true");
-  } else {
-    campoSenha.type = "password";
-    botaoMostrar.textContent = "Mostrar";
-    botaoMostrar.setAttribute("aria-pressed", "false");
-  }
-}
-
-botaoMostrar.addEventListener("click", alternarSenha);
-
 const formLogin = document.querySelector("#form-login");
 const campoEmail = document.querySelector("#email");
-const avisoLogin = document.querySelector("#aviso-login");
+const campoSenha = document.querySelector("#senha");
+const campoLembrar = document.querySelector("#lembrar");
+const aviso = document.querySelector("#aviso-login");
+const botaoEntrar = formLogin.querySelector('button[type="submit"]');
 
-function mostrarAviso(texto, ehErro) {
-  avisoLogin.textContent = texto;
+ligarMostrarSenha();
 
-  if (ehErro) {
-    avisoLogin.classList.add("erro");
-  } else {
-    avisoLogin.classList.remove("erro");
-  }
-}
-
-function conferirLogin(evento) {
+formLogin.addEventListener("submit", async function (evento) {
   evento.preventDefault();
 
   const email = campoEmail.value.trim();
-  const depoisDoArroba = email.split("@")[1];
   const senha = campoSenha.value;
 
   if (email === "" || senha === "") {
-    mostrarAviso("Preencha o e-mail e a senha.", true);
-  } else if (!depoisDoArroba || !depoisDoArroba.includes(".")) {
-    mostrarAviso(
-      "O e-mail precisa ter um domínio, como nome@exemplo.com.",
-      true,
-    );
-  } else if (senha.length < 6) {
-    mostrarAviso("A senha precisa ter pelo menos 6 caracteres.", true);
-  } else {
-    mostrarAviso("Login conferido! Entrando no Peppa Games...", false);
-
-    setTimeout(function () {
-      window.location.href = "index.html";
-    }, 1500);
+    mostrarAviso(aviso, "Preencha e-mail e senha.", true);
+    return;
   }
-}
+  if (!emailParece(email)) {
+    mostrarAviso(aviso, "O e-mail precisa ter um domínio, como nome@exemplo.com.", true);
+    return;
+  }
 
-formLogin.addEventListener("submit", conferirLogin);
+  const dados = new FormData();
+  dados.append("email", email);
+  dados.append("senha", senha);
+  dados.append("lembrar", campoLembrar.checked ? "1" : "0");
+
+  botaoEntrar.disabled = true;
+  mostrarAviso(aviso, "Entrando...", false);
+
+  const resposta = await postar("login.php", dados);
+  botaoEntrar.disabled = false;
+
+  if (resposta.sucesso) {
+    mostrarAviso(aviso, "Login realizado! Redirecionando...", false);
+    setTimeout(function () { window.location.href = "index.html"; }, 800);
+  } else {
+    mostrarAviso(aviso, resposta.mensagem, true);
+  }
+});

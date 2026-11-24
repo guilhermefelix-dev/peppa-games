@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esqueci minha senha — Peppa Games</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/login.css">
+    <script src="js/auth-comum.js" defer></script>
+    <script src="js/esqueci-senha.js" defer></script>
+  </head>
+
+  <body>
+    <main class="pagina-login">
+      <section class="cartao-login" aria-labelledby="titulo-login">
+        <p class="marca">Peppa Games</p>
+        <h1 id="titulo-login">Esqueci minha senha</h1>
+        <p class="subtitulo">Informe o e-mail da sua conta para receber o link de redefinição.</p>
+
+        <form id="form-esqueci" method="post">
+          <div>
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="voce@exemplo.com" autocomplete="email" required>
+          </div>
+          <button type="submit">Enviar link</button>
+          <p id="aviso-esqueci" class="aviso" role="status" aria-live="polite"></p>
+          <p id="link-dev"></p>
+        </form>
+
+        <p class="rodape-login"><a href="login.html">Voltar para o login</a></p>
+      </section>
+    </main>
+  </body>
+</html>

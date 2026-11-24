@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar conta — Peppa Games</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/login.css">
+    <script src="js/auth-comum.js" defer></script>
+    <script src="js/cadastro.js" defer></script>
+  </head>
+
+  <body>
+    <main class="pagina-login">
+      <section class="cartao-login" aria-labelledby="titulo-login">
+        <p class="marca">Peppa Games</p>
+        <h1 id="titulo-login">Criar conta</h1>
+        <p class="subtitulo">Cadastre-se para comentar, avaliar e compartilhar dicas.</p>
+
+        <form id="form-cadastro" method="post">
+          <div>
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" placeholder="Como quer ser chamado" minlength="2" maxlength="40" autocomplete="nickname" required>
+          </div>
+          <div>
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="voce@exemplo.com" autocomplete="email" required>
+          </div>
+          <div>
+            <label for="senha">Senha</label>
+            <div class="campo-senha">
+              <input type="password" id="senha" name="senha" placeholder="Mínimo 6 caracteres" minlength="6" autocomplete="new-password" required>
+              <button type="button" class="mostrar-senha" aria-pressed="false">Mostrar</button>
+            </div>
+          </div>
+          <div>
+            <label for="confirmar">Confirmar senha</label>
+            <div class="campo-senha">
+              <input type="password" id="confirmar" placeholder="Repita a senha" minlength="6" autocomplete="new-password" required>
+              <button type="button" class="mostrar-senha" aria-pressed="false">Mostrar</button>
+            </div>
+          </div>
+
+          <button type="submit">Criar conta</button>
+          <p id="aviso-cadastro" class="aviso" role="status" aria-live="polite"></p>
+        </form>
+
+        <p class="rodape-login">Já tem conta? <a href="login.html">Entrar</a></p>
+      </section>
+    </main>
+  </body>
+</html>
