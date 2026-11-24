@@ -59,3 +59,14 @@ CREATE TABLE IF NOT EXISTS redefinicao_senha (
     UNIQUE KEY uq_redefinicao_token (token_hash),
     CONSTRAINT fk_redefinicao_usuario FOREIGN KEY (usuario_id) REFERENCES usuarios (id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS logins (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuario_id INT NOT NULL,
+    acao ENUM('cadastro', 'login') NOT NULL,
+    ip VARCHAR(45) NULL,
+    navegador VARCHAR(255) NULL,
+    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    INDEX idx_logins_usuario (usuario_id),
+    CONSTRAINT fk_logins_usuario FOREIGN KEY (usuario_id) REFERENCES usuarios (id) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

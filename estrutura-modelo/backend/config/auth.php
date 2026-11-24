@@ -1,5 +1,6 @@
 <?php
 
+const MODO_DEV = true;
 
 const SENHA_MIN = 6;
 const DIAS_LEMBRAR = 30;
@@ -59,4 +60,17 @@ function abrirSessaoDoUsuario($usuarioId, $lembrar)
     iniciarSessao();
     session_regenerate_id(true);
     $_SESSION['usuario_id'] = (int) $usuarioId;
+}
+
+function registrarLogin($pdo, $usuarioId, $acao)
+{
+    try {
+        $ip = $_SERVER['REMOTE_ADDR'] ?? null;
+        $navegador = substr((string) ($_SERVER['HTTP_USER_AGENT'] ?? ''), 0, 255);
+        $pdo->prepare('INSERT INTO logins (usuario_id, acao, ip, navegador) VALUES (?, ?, ?, ?)')
+            ->execute([(int) $usuarioId, $acao, $ip, $navegador]);
+    } catch (PDOException $e) {
+        
+        error_log('Peppa Games: não foi possível gravar o login: ' . $e->getMessage());
+    }
 }

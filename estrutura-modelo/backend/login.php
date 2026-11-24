@@ -18,7 +18,7 @@ try {
     $st->execute([$email]);
     $u = $st->fetch(PDO::FETCH_ASSOC);
 
-    // Mensagem igual para "e-mail não existe" e "senha errada": não revela quais e-mails têm conta.
+    
     if (!$u || !password_verify($senha, $u['senha_hash'])) {
         erro('E-mail ou senha incorretos.', 401);
     }
@@ -29,6 +29,7 @@ try {
     }
 
     abrirSessaoDoUsuario($u['id'], $lembrar);
+    registrarLogin($pdo, $u['id'], 'login');
     responder(['sucesso' => true, 'mensagem' => 'Login realizado!', 'usuario' => ['nome' => $u['nome'], 'email' => $u['email']]]);
 } catch (PDOException $e) {
     erro('Não foi possível entrar agora. A tabela "usuarios" existe? Importe o banco.sql de novo.', 500);

@@ -30,7 +30,9 @@ try {
     $st = $pdo->prepare('INSERT INTO usuarios (nome, email, senha_hash) VALUES (?, ?, ?)');
     $st->execute([$nome, $email, $hash]);
 
-    abrirSessaoDoUsuario($pdo->lastInsertId(), false);
+    $novoId = (int) $pdo->lastInsertId();
+    abrirSessaoDoUsuario($novoId, false);
+    registrarLogin($pdo, $novoId, 'cadastro');
     responder(['sucesso' => true, 'mensagem' => 'Conta criada com sucesso!', 'usuario' => ['nome' => $nome, 'email' => $email]], 201);
 } catch (PDOException $e) {
     erro('Não foi possível criar a conta agora. A tabela "usuarios" existe? Importe o banco.sql de novo.', 500);
